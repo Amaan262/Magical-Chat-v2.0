@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magical Chat</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="title">
+                <img src="img/chat.png" alt="Logo-img">
+                <h1>The Magical Chat</h1>
+            </div>
+            <button class="menu-btn" onclick="show_hide()">
+                <img src="img/hamburger.png" alt="menu-btn">
+            </button>
+        </header>
+        <section class="container">
+            <div class="user-area">
+                <div class="user-detail">
+                    <h3>Users</h3>
+                    <h4 class="user-count"> </h4>
+                </div>
+                <div class="user-list">
+                    <!-- <p>Jarvis Ahmad</p>
+                    <p>Friday sharma</p>
+                    <p>Dibbie boxkarma</p> -->
+                </div>
+            </div>
+            <div class="chat-area">
+                <div class="chats">
+                    <!-- <div class="user-join">
+                        <p> <b>Jarvis Ahmad</b> joined the chat</p>
+                    </div>
+                     <div class="message incoming">
+                        <h4>Jarvis</h4>
+                        <p>Hello iam jarvis</p>
+                    </div>
+                    <div class="message outgoing">
+                        <h4>Veronica</h4>
+                        <p>Hello iam Veronica Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nesciunt temporibus. Ut debitis modi culpa velit quasi facilis voluptatum distinctio atque illum quod quam blanditiis cumque voluptas dolore explicabo, exercitationem laboriosam ab magnam soluta fugit, adipisci voluptatibus minus? Rem possimus consequuntur illum, quo hic itaque esse a nesciunt debitis atque?</p>
+                    </div> -->
+                    <!--
+                    <div class="message incoming">
+                        <h4>Jarvis</h4>
+                        <p>Hello iam jarvis Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi voluptatem suscipit atque tempore voluptates repellendus explicabo eum ab magnam ducimus dolorem quisquam et a, nisi blanditiis consequuntur tempora velit expedita unde. Nemo natus itaque amet adipisci, numquam recusandae autem possimus libero. Aperiam incidunt delectus maxime sapiente eaque tempore aliquam velit.</p>
+                    </div>
+                    <div class="message outgoing">
+                        <h4>Veronica</h4>
+                        <p>Hello iam Veronica lorem50</p>
+                    </div> -->
+                    <!-- <div class="message incoming">
+                        <h4>Jarvis</h4>
+                        <p>Hello iam Veronica lorem50</p>
+                    </div> -->
+                </div>
+                    <div class="user-input">
+                        <input type="text" id="msg-input" placeholder="Write your message...">
+                        <button type="button" id="send-btn"><img src="img/send.png" alt=""></button>
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        var user_area = document.querySelector(".user-area");
+
+        function show_hide(){
+            if (user_area.style.display == "block") {
+                user_area.style.display = "none";
+            }
+            else{
+                user_area.style.display = "block";
+
+            }
+        }
+        
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+</html>
