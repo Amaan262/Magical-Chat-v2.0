@@ -11,7 +11,7 @@ var msg_input = document.querySelector('#msg-input');
 
 
 do{
-    username = prompt("Enter you Beautiful Name to use Magical Chat App")
+    username = prompt("Enter you Name to use Magical Chat App")
 }while(!username);
 
 socket.emit("new-user-joined",username);
