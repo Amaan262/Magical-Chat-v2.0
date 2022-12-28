@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 5500;
 const io = require("socket.io")(server);
 
 server.listen(PORT, () => {
-  console.log(`Server started at ${PORT}`);
+  console.log(`Listening on port http://localhost:${PORT}`);
+
 });
 
 app.get("/", (req, res) => {
@@ -28,17 +29,17 @@ io.on("connection", (socket) => {
     // console.log(users);.  
     socket.broadcast.emit("user-connected", username);
 
-    io.emit('user-list',users);
-    socket.on('message', (data) =>{
-        socket.broadcast.emit('message',data);
+    io.emit('user-list', users);
+    socket.on('message', (data) => {
+      socket.broadcast.emit('message', data);
     });
-});
+  });
 
-socket.on('disconnect',()=>{
+  socket.on('disconnect', () => {
     user = users[socket.id];
     socket.broadcast.emit('user-disconnected', user);
-      delete users[socket.id];
-    io.emit('user-list',users);
+    delete users[socket.id];
+    io.emit('user-list', users);
   });
 
 });
